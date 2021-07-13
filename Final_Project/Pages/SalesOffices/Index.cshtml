@@ -1,0 +1,42 @@
+﻿@page
+@model Final_Project.Pages.SalesOffices.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>BRE Sales Offices List</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SalesOffice[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalesOffice[0].SalesOfficeName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.SalesOffice) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.City.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalesOfficeName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.SalesOfficeId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.SalesOfficeId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SalesOfficeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

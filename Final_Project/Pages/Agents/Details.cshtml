@@ -1,0 +1,63 @@
+﻿@page
+@model Final_Project.Pages.Agents.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Agent Details</h1>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Agent.FirstName)  @Html.DisplayFor(model => model.Agent.LastName)</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agent.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agent.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agent.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agent.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agent.SalesOffice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agent.SalesOffice.SalesOfficeName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agent.numHomes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agent.numHomes)
+        </dd>
+    </dl>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="badge badge badge-danger">Properties Managed: </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.Agent.Dwellings)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Agent.AgentId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

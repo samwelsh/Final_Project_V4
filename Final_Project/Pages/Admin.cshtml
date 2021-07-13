@@ -1,0 +1,52 @@
+﻿@page
+@model Final_Project.Pages.AdminModel
+@{
+    ViewData["Title"] = "Sytem Administrator Tools";
+}
+
+<head>
+    
+</head>
+
+
+<body>
+    <h1 class="text-danger">@ViewData["Title"]</h1>
+    <h5>Use the links below to make changes to the BRE database:</h5>
+    <div class="card-deck">
+        <div class="card" style="width: 18rem; border-color: dodgerblue;">
+            <div class="card-body">
+                <h3 class="card-title text-dark"><strong><u>Agents</u></strong></h3>
+                <p class="card-text"><a class="nav-link badge-pill badge-info text-center" asp-area="" asp-page="/Agents/Index"><strong>View/Edit Agents</strong></a> <em>View or make changes to existing BRE agents.</em></p>
+                <p class="card-text"><a class="nav-link  badge-pill badge-info text-center" asp-area="" asp-page="/Agents/Create"><strong>New Agent</strong></a> <em>Add a new agent to the BRE system.</em></p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; border-color: green;">
+
+            <div class="card-body">
+                <h3 class="card-title text-dark"><strong><u>Cities</u></strong></h3>
+                <p class="card-text"><a class="nav-link badge-pill badge-success text-center" asp-area="" asp-page="/Cities/Index"><strong>View/Edit Cities</strong></a> <em>View or make changes to the existing list of cities.</em></p>
+                <p class="card-text"><a class="nav-link  badge-pill badge-success text-center" asp-area="" asp-page="/Cities/Create"><strong>New City</strong></a> <em>Add a new city to the BRE system.</em></p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="card-deck">
+        <div class="card" style="width: 18rem; border-color: goldenrod;">
+
+            <div class="card-body">
+                <h3 class="card-title text-dark"><strong><u>Dwellings</u></strong></h3>
+                <p class="card-text"><a class="nav-link badge-pill badge-warning text-center" asp-area="" asp-page="/Dwellings/Index"><strong>View/Edit Dwellings</strong></a> <em>View or make changes to existing dwellings in the BRE system</em></p>
+                <p class="card-text"><a class="nav-link  badge-pill badge-warning text-center" asp-area="" asp-page="/Dwellings/Create"><strong>New Dwelling</strong></a> <em>Add a new dwelling to the BRE system.</em></p>
+                <p class="card-text"><a class="nav-link  badge-pill badge-warning text-center" asp-area="" asp-page="/Dwellings/Search"><strong>Search Dwellings</strong></a> <em>Perform a search of all dwellings in the BRE system.</em></p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; border-color: red;">
+
+            <div class="card-body">
+                <h3 class="card-title text-dark"><strong><u>Sales Offices</u></strong></h3>
+                <p class="card-text"><a class="nav-link badge-pill badge-danger text-center" asp-area="" asp-page="/SalesOffices/Index"><strong>View/Edit Sales Offices</strong></a> <em>View or make changes to existing sales offices.</em></p>
+                <p class="card-text"><a class="nav-link  badge-pill badge-danger text-center" asp-area="" asp-page="/SalesOffices/Create"><strong>New Sales Office</strong></a> <em>Add a new sales office to the BRE system.</em></p>
+            </div>
+        </div>
+    </div>
+</body>

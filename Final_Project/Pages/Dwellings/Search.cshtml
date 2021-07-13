@@ -1,0 +1,62 @@
+﻿@page
+@model Final_Project.Pages.Dwellings.SearchModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1 class="text-red">Search For Homes</h1>
+<p1>Find a home in your city! Search our entire catalogue of homes and find the one that you've been dreaming of.</p1>
+
+
+<div class="row">
+    <div class="col">
+        <form action="" method="get" class="form-inline">
+            <input asp-for="Query" class="form-control mr-sm-2 mb-2" placeholder="Search by city..." />
+            <button type="submit" class="btn-primary mb-2">Search</button>
+        </form>
+    </div>
+</div>
+
+
+    @if (Model.SearchCompleted)
+    {
+        if (Model.Dwelling.Any())
+        {
+            <h5 class=" badge-pill badge-danger">Here are the homes matching your search for "<strong>@Model.Query</strong>":</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Dwelling[0].Address)</th>
+                        <th>@Html.DisplayNameFor(model => model.Dwelling[0].City)</th>
+                        <th>@Html.DisplayNameFor(model => model.Dwelling[0].Zip)</th>
+                        <th>@Html.DisplayNameFor(model => model.Dwelling[0].Agent)</th>
+                        <th>@Html.DisplayNameFor(model => model.Dwelling[0].Price)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Dwelling)
+                    {
+                        <tr>
+                            <td><a href="/Dwellings/Details?id=@Html.DisplayFor(modelItem => item.DwellingId)">@Html.DisplayFor(modelItem => item.Address)</a></td>
+                            <td>@Html.DisplayFor(modelItem => item.City.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Zip)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Agent.FirstName) @Html.DisplayFor(modelItem => item.Agent.LastName) | <a href="/Agents/Details?id=@Html.DisplayFor(modelItem => item.Agent.AgentId)">View Agent Profile</a></td>
+                            <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-info">
+                        No results match your search for <strong>@Model.Query</strong>
+                    </div>
+                </div>
+            </div>
+        }
+    }

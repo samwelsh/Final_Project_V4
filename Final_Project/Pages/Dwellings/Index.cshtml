@@ -1,0 +1,66 @@
+﻿@page
+@model Final_Project.Pages.Dwellings.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Dwellings</h1>
+
+<p>
+    <a asp-page="Create">Create New Dwelling</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Zip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Agent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Dwelling) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agent.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.DwellingId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.DwellingId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.DwellingId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

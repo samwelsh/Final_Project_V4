@@ -1,0 +1,167 @@
+﻿@page
+@model IndexModel
+@{
+}
+<!-- Image over text help found at: https://css-tricks.com/text-blocks-over-image/ -->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .image {
+            position: relative;
+            width: 100%;
+        }
+
+        h2 {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            width: 100%;
+        }
+
+            h2 span {
+                color: lightgray;
+                font: bold 45px/45px Helvetica, Sans-Serif;
+                letter-spacing: -1px;
+                background: rgb(0,0,0);
+                background: rgba(0,0,0,0.7);
+                padding: 10px;
+            }
+
+        h3 {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            width: 100%;
+        }
+
+            h3 span {
+                color: white;
+                font: 15px/30px Helvetica, Sans-Serif;
+                letter-spacing: 0px;
+                background: rgb(0,0,0);
+                background: rgb(150, 0, 0, 0.7);
+                padding: 11px;
+            }
+    </style>
+    <div class="text-center">
+        <h1 class="display-4">Bearcat Real Estate</h1>
+    </div>
+
+</head>
+
+<body>
+    <div class="image">
+        <img src="https://bloximages.newyork1.vip.townnews.com/newsrecord.org/content/tncms/assets/v3/editorial/d/da/dda5a832-598f-11e4-9ac9-001a4bcf6878/544711833a626.image.jpg" class="text-center" alt="Bearcat" height="600" width="1100" />
+        <h2><span>The #1 Real Estate Team in Cincinnati</span></h2>
+
+        <h3><span><br /><br /><br /><br /><br />At BRE we're Bearcat fans just like you, and we're as passionate about real estate as we are about our home team. Our award-winning team of realtors will work day and night to get you the results you want during the home buying or selling process. Explore our options and see the Bearcat Difference in action!</span></h3>
+
+    </div>
+    <div class="container">
+        <br />
+        <div class="row">
+            <h4><strong>Our services are...</strong></h4>
+        </div>
+        <div class="row">
+            <div class="col-sm text-center">
+                <h4><span class="badge badge badge-danger">...Fast</span></h4>
+            </div>
+            <div class="col-sm text-center">
+                <h4><span class="badge badge badge-danger">...Reliable</span></h4>
+            </div>
+            <div class="col-sm text-center">
+                <h4><span class="badge badge badge-danger">...Lasting</span></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm text-center">
+                <p>"Our home was listed on a Monday and we had a copmleted sale in less than 2 weeks!"</p>
+                <p><strong>-The Miller Family, West Chester</strong></p>
+            </div>
+            <div class="col-sm text-center">
+                <p>"My BRE agent was there for me every step of the way while I searched for the right house and gave me all of the information I needed about the process.</p>
+                <p><strong>-Mike Stephenson, Oakley</strong></p>
+            </div>
+            <div class="col-sm text-center">
+                <p>"We couldn't be happier with the home that BRE found for us. We can't wait to raise our children and make new memories here for years to come!</p>
+                <p><strong>-The Jones Family, Mason</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="card-deck">
+        <div class="card" style="width: 18rem;">
+            <img src="https://cdn.shopify.com/s/files/1/1241/3996/products/2329_FRONT_1300x.jpg?v=1579890130" class="card-img-top" />
+            <div class="card-body">
+                <h5 class="card-title"><a class="nav-link  badge-danger text-center" asp-area="" asp-page="/Dwellings/Search"><strong>Find a Home</strong></a></h5>
+                <p class="card-text">Search our catalogue of available homes or get in touch with an agent to find exactly what you're looking for.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="https://charlotteagenda-charlotteagenda.netdna-ssl.com/wp-content/uploads/2019/06/June-29-30-open-houses-header.jpg" class="card-img-top" />
+            <div class="card-body">
+                <h5 class="card-title"><strong>Sell a Home</strong></h5>
+                <p class="card-text">Get in touch with one of our agents who will assist you with every step of the home selling process.</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://jobs.fobza.com/wp-content/uploads/2019/11/112665406-group-of-diverse-employees-working-on-laptop-at-meeting.jpg" class="card-img-top" />
+            <div class="card-body">
+                <h5 class="card-title"><strong>Our Team</strong></h5>
+                <p class="card-text">Learn more about the BRE team, voted one of Cincinnati's best real estate agences!</p>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        Agents & Homes
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Agent Name</th>
+                <th scope="col">Dwellings</th>
+                <th scope="col">Average Dwelling Price</th>
+                <th scope="col">Sales Office</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Joe Michaelson </td>
+                <td> 2</td>
+                <td> $500,000</td>
+                <td> BRE Central Ohio Regional HQ </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Steve Williams</td>
+                <td>0 </td>
+                <td> $120,000</td>
+                <td>BRE Ohio Headquarters</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Rebecca Smith</td>
+                <td>1</td>
+                <td> $990,000</td>
+                <td>BRE Ohio Headquarters</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Mary Wilson</td>
+                <td>0</td>
+                <td> $970,000</td>
+                <td>BRE Ohio Headquarters</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Matt Donald</td>
+                <td>1</td>
+                <td> $290,000</td>
+                <td>BRE Central Ohio Regional HQ</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
